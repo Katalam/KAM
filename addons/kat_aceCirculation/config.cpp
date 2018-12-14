@@ -51,7 +51,6 @@ class CfgFunctions {
 	class kat_aceCirculation {
     file = "kat_aceCirculation\functions";
 		class functions {
-        class access{};
         class bloodType{};
         class compatible{};
         class events{};
@@ -62,6 +61,7 @@ class CfgFunctions {
         class registerSettings{};
         class removeEffect_IV{};
         class removeItemfromMag{};
+        class treatmentAdvanced_Access{};
         class treatmentAdvanced_IV{};
         class treatmentAdvanced_X{};
 		};
@@ -480,13 +480,14 @@ class ACE_Medical_Actions {
       displayName = "Access";
       displayNameProgress = "Doing";
       items[] = {"ACE_surgicalKit"};
-      condition = "true";
+      category = "advanced";
+      condition = "(_target getVariable ['kat_aceCirculation_access', [0,0,0,0,0,0]] select ([_selectionName] call ace_medical_fnc_selectionNameToNumber)) == 0";
       itemConsumed = 0;
       requiredMedic = 1;
       treatmentTime = 5;
       allowedSelections[] = {"hand_l", "hand_r", "leg_l", "leg_r"};
       callbackProgress = "";
-      callbackSuccess = "[_target, _selectionName] call kat_aceCirculation_fnc_access";
+      callbackSuccess = "[_player, _target, _selectionName] call kat_aceCirculation_fnc_treatmentAdvanced_Access";
     };
 	};
 };

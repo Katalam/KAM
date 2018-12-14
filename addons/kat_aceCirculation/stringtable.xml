@@ -181,5 +181,9 @@
         <English>Used to cool blood</English>
         <German>Benutzt um Blut zu kühlen</German>
       </Key>
+      <Key ID="STR_KAT_aceCirculation_access">
+        <English>%1 established access at %2</English>
+        <German>%1 legte einen Zugang am %2</German>
+      </Key>
 		</Package>
 </Project>
