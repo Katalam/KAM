@@ -1,5 +1,5 @@
 class BloodIV: fieldDressing {
-	condition = "(_target getVariable ['kat_aceCirculation_access', [0,0,0,0,0,0]] select ([_selectionName] call ace_medical_fnc_selectionNameToNumber)) > 0";
+	condition = "!(missionNamespace getVariable ['kat_aceCirculation_access', true]) || (_target getVariable ['kat_aceCirculation_access', [0,0,0,0,0,0]] select ([_selectionName] call ace_medical_fnc_selectionNameToNumber)) > 0";
 };
 //[player,cursorTarget,_selectionName,className,["itemname"],[[player,"itemname"]]]
 class BloodIV_O: BloodIV {

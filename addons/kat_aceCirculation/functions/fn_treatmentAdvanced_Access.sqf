@@ -38,5 +38,5 @@ switch (_selectionName) do {
 };
 
 // medical log
-[_target, "activity", "STR_KAT_aceCirculation_access", [[_player] call ace_common_fnc_getName, _location]] call ace_medical_fnc_addToLog;
-[_target, "activity_view", "STR_KAT_aceCirculation_access", [[_player] call ace_common_fnc_getName, _location]] call ace_medical_fnc_addToLog;
+[_target, "activity", "STR_KAT_aceCirculation_access_log", [[_player] call ace_common_fnc_getName, _location]] call ace_medical_fnc_addToLog;
+[_target, "activity_view", "STR_KAT_aceCirculation_access_log", [[_player] call ace_common_fnc_getName, _location]] call ace_medical_fnc_addToLog;

@@ -9,6 +9,10 @@
         <English>Different loadoutname</English>
         <German>Anderer Loadoutname</German>
       </Key>
+      <Key ID="STR_kat_aceCirculation_SETTING_access">
+        <English>Enable the access system</English>
+        <German>Aktivieren der Zugänge</German>
+      </Key>
       <Key ID="STR_KAT_aceCirculation_BloodIV_O">
         <English>Blood IV (1000ml) BT: 0</English>
         <German>Blut IV (1000ml) BG: 0</German>
@@ -181,9 +185,17 @@
         <English>Used to cool blood</English>
         <German>Benutzt um Blut zu kühlen</German>
       </Key>
-      <Key ID="STR_KAT_aceCirculation_access">
+      <Key ID="STR_KAT_aceCirculation_access_log">
         <English>%1 established access at %2</English>
         <German>%1 legte einen Zugang am %2</German>
+      </Key>
+      <Key ID="STR_KAT_aceCirculation_access_display">
+        <English>Give access</English>
+        <German>Zugang legen</German>
+      </Key>
+      <Key ID="STR_KAT_aceCirculation_access_doing">
+        <English>Giving</English>
+        <German>Legen</German>
       </Key>
 		</Package>
 </Project>

@@ -305,7 +305,7 @@ class Man;
       class ACE_ArmLeft {
         #include "Blood_ArmL.hpp"
         class Access {
-          displayName = "Access";
+          displayName = $STR_KAT_aceCirculation_access_display;
           condition = "[_player, _target, 'hand_l', 'Access'] call ace_medical_fnc_canTreatCached";
           statement = "[_player, _target, 'hand_l', 'Access'] call ace_medical_fnc_treatment";
           showDisabled = 0;
@@ -316,7 +316,7 @@ class Man;
       class ACE_ArmRight {
         #include "Blood_ArmR.hpp"
         class Access {
-          displayName = "Access";
+          displayName = $STR_KAT_aceCirculation_access_display;
           condition = "[_player, _target, 'hand_r', 'Access'] call ace_medical_fnc_canTreatCached";
           statement = "[_player, _target, 'hand_r', 'Access'] call ace_medical_fnc_treatment";
           showDisabled = 0;
@@ -327,7 +327,7 @@ class Man;
       class ACE_LegLeft {
         #include "Blood_LegL.hpp"
         class Access {
-          displayName = "Access";
+          displayName = $STR_KAT_aceCirculation_access_display;
           condition = "[_player, _target, 'leg_l', 'Access'] call ace_medical_fnc_canTreatCached";
           statement = "[_player, _target, 'leg_l', 'Access'] call ace_medical_fnc_treatment";
           showDisabled = 0;
@@ -338,7 +338,7 @@ class Man;
       class ACE_LegRight {
         #include "Blood_LegR.hpp"
         class Access {
-          displayName = "Access";
+          displayName = $STR_KAT_aceCirculation_access_display;
           condition = "[_player, _target, 'leg_r', 'Access'] call ace_medical_fnc_canTreatCached";
           statement = "[_player, _target, 'leg_r', 'Access'] call ace_medical_fnc_treatment";
           showDisabled = 0;
@@ -378,15 +378,47 @@ class Man;
           };
           class ACE_ArmLeft {
             #include "Blood_ArmL.hpp"
+            class Access {
+              displayName = $STR_KAT_aceCirculation_access_display;
+              condition = "[_player, _target, 'hand_l', 'Access'] call ace_medical_fnc_canTreatCached";
+              statement = "[_player, _target, 'hand_l', 'Access'] call ace_medical_fnc_treatment";
+              showDisabled = 0;
+              exceptions[] = {"isNotSitting"};
+              //icon = "kat_aceCirculation\images\icon_painkillers_action.paa";
+            };
           };
           class ACE_ArmRight {
             #include "Blood_ArmR.hpp"
+            class Access {
+              displayName = $STR_KAT_aceCirculation_access_display;
+              condition = "[_player, _target, 'hand_r', 'Access'] call ace_medical_fnc_canTreatCached";
+              statement = "[_player, _target, 'hand_r', 'Access'] call ace_medical_fnc_treatment";
+              showDisabled = 0;
+              exceptions[] = {"isNotSitting"};
+              //icon = "kat_aceCirculation\images\icon_painkillers_action.paa";
+            };
           };
           class ACE_LegLeft {
             #include "Blood_LegL.hpp"
+            class Access {
+              displayName = $STR_KAT_aceCirculation_access_display;
+              condition = "[_player, _target, 'leg_l', 'Access'] call ace_medical_fnc_canTreatCached";
+              statement = "[_player, _target, 'leg_l', 'Access'] call ace_medical_fnc_treatment";
+              showDisabled = 0;
+              exceptions[] = {"isNotSitting"};
+              //icon = "kat_aceCirculation\images\icon_painkillers_action.paa";
+            };
           };
           class ACE_LegRight {
             #include "Blood_LegR.hpp"
+            class Access {
+              displayName = $STR_KAT_aceCirculation_access_display;
+              condition = "[_player, _target, 'leg_r', 'Access'] call ace_medical_fnc_canTreatCached";
+              statement = "[_player, _target, 'leg_r', 'Access'] call ace_medical_fnc_treatment";
+              showDisabled = 0;
+              exceptions[] = {"isNotSitting"};
+              //icon = "kat_aceCirculation\images\icon_painkillers_action.paa";
+            };
           };
         };
       };
@@ -477,11 +509,11 @@ class ACE_Medical_Actions {
       callbackSuccess = "_target setVariable ['kat_aceCirculation_X', false, true]; _player setVariable ['kat_aceCirculation_use', false, true]";
     };
     class Access: FieldDressing {
-      displayName = "Access";
-      displayNameProgress = "Doing";
+      displayName = $STR_KAT_aceCirculation_access_display;
+      displayNameProgress = $STR_KAT_aceCirculation_access_doing;
       items[] = {"ACE_surgicalKit"};
       category = "advanced";
-      condition = "(_target getVariable ['kat_aceCirculation_access', [0,0,0,0,0,0]] select ([_selectionName] call ace_medical_fnc_selectionNameToNumber)) == 0";
+      condition = "(missionNamespace getVariable ['kat_aceCirculation_access', true]) && (_target getVariable ['kat_aceCirculation_access', [0,0,0,0,0,0]] select ([_selectionName] call ace_medical_fnc_selectionNameToNumber)) == 0";
       itemConsumed = 0;
       requiredMedic = 1;
       treatmentTime = 5;
