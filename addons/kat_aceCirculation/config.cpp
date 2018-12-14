@@ -51,6 +51,7 @@ class CfgFunctions {
 	class kat_aceCirculation {
     file = "kat_aceCirculation\functions";
 		class functions {
+        class access{};
         class bloodType{};
         class compatible{};
         class events{};
@@ -303,15 +304,47 @@ class Man;
       };
       class ACE_ArmLeft {
         #include "Blood_ArmL.hpp"
+        class Access {
+          displayName = "Access";
+          condition = "[_player, _target, 'hand_l', 'Access'] call ace_medical_fnc_canTreatCached";
+          statement = "[_player, _target, 'hand_l', 'Access'] call ace_medical_fnc_treatment";
+          showDisabled = 0;
+          exceptions[] = {"isNotSitting"};
+          //icon = "kat_aceCirculation\images\icon_painkillers_action.paa";
+        };
       };
       class ACE_ArmRight {
         #include "Blood_ArmR.hpp"
+        class Access {
+          displayName = "Access";
+          condition = "[_player, _target, 'hand_r', 'Access'] call ace_medical_fnc_canTreatCached";
+          statement = "[_player, _target, 'hand_r', 'Access'] call ace_medical_fnc_treatment";
+          showDisabled = 0;
+          exceptions[] = {"isNotSitting"};
+          //icon = "kat_aceCirculation\images\icon_painkillers_action.paa";
+        };
       };
       class ACE_LegLeft {
         #include "Blood_LegL.hpp"
+        class Access {
+          displayName = "Access";
+          condition = "[_player, _target, 'leg_l', 'Access'] call ace_medical_fnc_canTreatCached";
+          statement = "[_player, _target, 'leg_l', 'Access'] call ace_medical_fnc_treatment";
+          showDisabled = 0;
+          exceptions[] = {"isNotSitting"};
+          //icon = "kat_aceCirculation\images\icon_painkillers_action.paa";
+        };
       };
       class ACE_LegRight {
         #include "Blood_LegR.hpp"
+        class Access {
+          displayName = "Access";
+          condition = "[_player, _target, 'leg_r', 'Access'] call ace_medical_fnc_canTreatCached";
+          statement = "[_player, _target, 'leg_r', 'Access'] call ace_medical_fnc_treatment";
+          showDisabled = 0;
+          exceptions[] = {"isNotSitting"};
+          //icon = "kat_aceCirculation\images\icon_painkillers_action.paa";
+        };
       };
       class ACE_MainActions {
         class Medical {
@@ -442,6 +475,18 @@ class ACE_Medical_Actions {
       treatmentTime = 2;
       callbackProgress = "";
       callbackSuccess = "_target setVariable ['kat_aceCirculation_X', false, true]; _player setVariable ['kat_aceCirculation_use', false, true]";
+    };
+    class Access: FieldDressing {
+      displayName = "Access";
+      displayNameProgress = "Doing";
+      items[] = {"ACE_surgicalKit"};
+      condition = "true";
+      itemConsumed = 0;
+      requiredMedic = 1;
+      treatmentTime = 5;
+      allowedSelections[] = {"hand_l", "hand_r", "leg_l", "leg_r"};
+      callbackProgress = "";
+      callbackSuccess = "[_target, _selectionName] call kat_aceCirculation_fnc_access";
     };
 	};
 };

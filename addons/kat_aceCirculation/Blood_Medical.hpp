@@ -1,4 +1,7 @@
-class BloodIV;
+class BloodIV: fieldDressing {
+	condition = "(_target getVariable ['kat_aceCirculation_access', [0,0,0,0,0,0]] select ([_selectionName] call ace_medical_fnc_selectionNameToNumber)) > 0";
+};
+//[player,cursorTarget,_selectionName,className,["itemname"],[[player,"itemname"]]]
 class BloodIV_O: BloodIV {
 	displayName = $STR_KAT_aceCirculation_Action_BloodIV_O;
 	items[] = {"KAT_bloodIV_O"};
