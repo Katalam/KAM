@@ -18,11 +18,12 @@
 params ["", "_target", "_selectionName"]; //0: _player
 
 private _access = _target getVariable ['kat_aceCirculation_access', [0,0,0,0,0,0]];
+_access set [[_selectionName] call ace_medical_fnc_selectionNameToNumber, 0];
+_target setVariable ['kat_aceCirculation_access', _access, true];
+
 if ({_x > 0} count _access == 0) then {
   _target forceWalk false;
 };
-_access set [[_selectionName] call ace_medical_fnc_selectionNameToNumber, 0];
-_target setVariable ['kat_aceCirculation_access', _access, true];
 
 /*
 private _location = "";
