@@ -59,6 +59,7 @@ class CfgFunctions {
         class handleTreatment{};
         class init{};
         class registerSettings{};
+        class removeAccess{};
         class removeEffect_IV{};
         class removeItemfromMag{};
         class treatmentAdvanced_Access{};
@@ -312,6 +313,14 @@ class Man;
           exceptions[] = {"isNotSitting"};
           //icon = "kat_aceCirculation\images\icon_painkillers_action.paa";
         };
+        class RemoveAccess {
+          displayName = $STR_KAT_aceCirculation_access_display;
+          condition = "[_player, _target, 'hand_l', 'RemoveAccess'] call ace_medical_fnc_canTreatCached";
+          statement = "[_player, _target, 'hand_l', 'RemoveAccess'] call ace_medical_fnc_treatment";
+          showDisabled = 0;
+          exceptions[] = {"isNotSitting"};
+          //icon = "kat_aceCirculation\images\icon_painkillers_action.paa";
+        };
       };
       class ACE_ArmRight {
         #include "Blood_ArmR.hpp"
@@ -319,6 +328,14 @@ class Man;
           displayName = $STR_KAT_aceCirculation_access_display;
           condition = "[_player, _target, 'hand_r', 'Access'] call ace_medical_fnc_canTreatCached";
           statement = "[_player, _target, 'hand_r', 'Access'] call ace_medical_fnc_treatment";
+          showDisabled = 0;
+          exceptions[] = {"isNotSitting"};
+          //icon = "kat_aceCirculation\images\icon_painkillers_action.paa";
+        };
+        class RemoveAccess {
+          displayName = $STR_KAT_aceCirculation_access_display;
+          condition = "[_player, _target, 'hand_r', 'RemoveAccess'] call ace_medical_fnc_canTreatCached";
+          statement = "[_player, _target, 'hand_r', 'RemoveAccess'] call ace_medical_fnc_treatment";
           showDisabled = 0;
           exceptions[] = {"isNotSitting"};
           //icon = "kat_aceCirculation\images\icon_painkillers_action.paa";
@@ -334,6 +351,14 @@ class Man;
           exceptions[] = {"isNotSitting"};
           //icon = "kat_aceCirculation\images\icon_painkillers_action.paa";
         };
+        class RemoveAccess {
+          displayName = $STR_KAT_aceCirculation_access_display;
+          condition = "[_player, _target, 'leg_l', 'RemoveAccess'] call ace_medical_fnc_canTreatCached";
+          statement = "[_player, _target, 'leg_l', 'RemoveAccess'] call ace_medical_fnc_treatment";
+          showDisabled = 0;
+          exceptions[] = {"isNotSitting"};
+          //icon = "kat_aceCirculation\images\icon_painkillers_action.paa";
+        };
       };
       class ACE_LegRight {
         #include "Blood_LegR.hpp"
@@ -341,6 +366,14 @@ class Man;
           displayName = $STR_KAT_aceCirculation_access_display;
           condition = "[_player, _target, 'leg_r', 'Access'] call ace_medical_fnc_canTreatCached";
           statement = "[_player, _target, 'leg_r', 'Access'] call ace_medical_fnc_treatment";
+          showDisabled = 0;
+          exceptions[] = {"isNotSitting"};
+          //icon = "kat_aceCirculation\images\icon_painkillers_action.paa";
+        };
+        class RemoveAccess {
+          displayName = $STR_KAT_aceCirculation_access_display;
+          condition = "[_player, _target, 'leg_r', 'RemoveAccess'] call ace_medical_fnc_canTreatCached";
+          statement = "[_player, _target, 'leg_r', 'RemoveAccess'] call ace_medical_fnc_treatment";
           showDisabled = 0;
           exceptions[] = {"isNotSitting"};
           //icon = "kat_aceCirculation\images\icon_painkillers_action.paa";
@@ -386,6 +419,14 @@ class Man;
               exceptions[] = {"isNotSitting"};
               //icon = "kat_aceCirculation\images\icon_painkillers_action.paa";
             };
+            class RemoveAccess {
+              displayName = $STR_KAT_aceCirculation_access_display;
+              condition = "[_player, _target, 'hand_l', 'RemoveAccess'] call ace_medical_fnc_canTreatCached";
+              statement = "[_player, _target, 'hand_l', 'RemoveAccess'] call ace_medical_fnc_treatment";
+              showDisabled = 0;
+              exceptions[] = {"isNotSitting"};
+              //icon = "kat_aceCirculation\images\icon_painkillers_action.paa";
+            };
           };
           class ACE_ArmRight {
             #include "Blood_ArmR.hpp"
@@ -393,6 +434,14 @@ class Man;
               displayName = $STR_KAT_aceCirculation_access_display;
               condition = "[_player, _target, 'hand_r', 'Access'] call ace_medical_fnc_canTreatCached";
               statement = "[_player, _target, 'hand_r', 'Access'] call ace_medical_fnc_treatment";
+              showDisabled = 0;
+              exceptions[] = {"isNotSitting"};
+              //icon = "kat_aceCirculation\images\icon_painkillers_action.paa";
+            };
+            class RemoveAccess {
+              displayName = $STR_KAT_aceCirculation_access_display;
+              condition = "[_player, _target, 'hand_r', 'RemoveAccess'] call ace_medical_fnc_canTreatCached";
+              statement = "[_player, _target, 'hand_r', 'RemoveAccess'] call ace_medical_fnc_treatment";
               showDisabled = 0;
               exceptions[] = {"isNotSitting"};
               //icon = "kat_aceCirculation\images\icon_painkillers_action.paa";
@@ -408,6 +457,14 @@ class Man;
               exceptions[] = {"isNotSitting"};
               //icon = "kat_aceCirculation\images\icon_painkillers_action.paa";
             };
+            class RemoveAccess {
+              displayName = $STR_KAT_aceCirculation_access_display;
+              condition = "[_player, _target, 'leg_l', 'RemoveAccess'] call ace_medical_fnc_canTreatCached";
+              statement = "[_player, _target, 'leg_l', 'RemoveAccess'] call ace_medical_fnc_treatment";
+              showDisabled = 0;
+              exceptions[] = {"isNotSitting"};
+              //icon = "kat_aceCirculation\images\icon_painkillers_action.paa";
+            };
           };
           class ACE_LegRight {
             #include "Blood_LegR.hpp"
@@ -415,6 +472,14 @@ class Man;
               displayName = $STR_KAT_aceCirculation_access_display;
               condition = "[_player, _target, 'leg_r', 'Access'] call ace_medical_fnc_canTreatCached";
               statement = "[_player, _target, 'leg_r', 'Access'] call ace_medical_fnc_treatment";
+              showDisabled = 0;
+              exceptions[] = {"isNotSitting"};
+              //icon = "kat_aceCirculation\images\icon_painkillers_action.paa";
+            };
+            class RemoveAccess {
+              displayName = $STR_KAT_aceCirculation_access_display;
+              condition = "[_player, _target, 'leg_r', 'RemoveAccess'] call ace_medical_fnc_canTreatCached";
+              statement = "[_player, _target, 'leg_r', 'RemoveAccess'] call ace_medical_fnc_treatment";
               showDisabled = 0;
               exceptions[] = {"isNotSitting"};
               //icon = "kat_aceCirculation\images\icon_painkillers_action.paa";
@@ -520,6 +585,19 @@ class ACE_Medical_Actions {
       allowedSelections[] = {"hand_l", "hand_r", "leg_l", "leg_r"};
       callbackProgress = "";
       callbackSuccess = "[_player, _target, _selectionName] call kat_aceCirculation_fnc_treatmentAdvanced_Access";
+    };
+    class RemoveAccess: FieldDressing {
+      displayName = $STR_KAT_aceCirculation_removeAccess_display;
+      displayNameProgress = $STR_KAT_aceCirculation_removeAccess_doing;
+      items[] = {"ACE_surgicalKit"};
+      category = "advanced";
+      condition = "(missionNamespace getVariable ['kat_aceCirculation_access', true]) && (_target getVariable ['kat_aceCirculation_access', [0,0,0,0,0,0]] select ([_selectionName] call ace_medical_fnc_selectionNameToNumber)) == 1";
+      itemConsumed = 0;
+      requiredMedic = 1;
+      treatmentTime = 5;
+      allowedSelections[] = {"hand_l", "hand_r", "leg_l", "leg_r"};
+      callbackProgress = "";
+      callbackSuccess = "[_player, _target, _selectionName] call kat_aceCirculation_fnc_removeAccess";
     };
 	};
 };

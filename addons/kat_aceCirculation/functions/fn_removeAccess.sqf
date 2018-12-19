@@ -1,6 +1,6 @@
 /*
  * Author: Katalam
- * Add a access point to a given selection of a given patient.
+ * Remove access point to a given selection of a given patient.
  *
  * Arguments:
  * 0: Patient <OBJECT>
@@ -10,18 +10,21 @@
  * None
  *
  * Example:
- * [player, cursorTarget,"hand_l"] call kat_aceCirculation_fnc_treatmentAdvanced_Access;
+ * [cursorTarget, "hand_l"] call kat_aceCirculation_fnc_removeAccess;
  *
  * Public: No
  */
 
-params ["_player", "_target", "_selectionName"];
+params ["", "_target", "_selectionName"]; //0: _player
 
 private _access = _target getVariable ['kat_aceCirculation_access', [0,0,0,0,0,0]];
-_access set [[_selectionName] call ace_medical_fnc_selectionNameToNumber, 1];
+if ({_x > 0} count _access == 0) then {
+  _target forceWalk false;
+};
+_access set [[_selectionName] call ace_medical_fnc_selectionNameToNumber, 0];
 _target setVariable ['kat_aceCirculation_access', _access, true];
-_target forceWalk true;
 
+/*
 private _location = "";
 switch (_selectionName) do {
   case ("hand_l"): {
@@ -41,3 +44,4 @@ switch (_selectionName) do {
 // medical log
 [_target, "activity", "STR_KAT_aceCirculation_access_log", [[_player] call ace_common_fnc_getName, _location]] call ace_medical_fnc_addToLog;
 [_target, "activity_view", "STR_KAT_aceCirculation_access_log", [[_player] call ace_common_fnc_getName, _location]] call ace_medical_fnc_addToLog;
+*/

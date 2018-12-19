@@ -197,5 +197,13 @@
         <English>Giving</English>
         <German>Legen</German>
       </Key>
+      <Key ID="STR_KAT_aceCirculation_removeAccess_display">
+        <English>Remove access</English>
+        <German>Zugang entfernen</German>
+      </Key>
+      <Key ID="STR_KAT_aceCirculation_removeAccess_doing">
+        <English>Removing</English>
+        <German>Entferne</German>
+      </Key>
 		</Package>
 </Project>
