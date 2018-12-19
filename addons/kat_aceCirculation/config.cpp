@@ -583,6 +583,7 @@ class ACE_Medical_Actions {
       requiredMedic = 1;
       treatmentTime = 5;
       allowedSelections[] = {"hand_l", "hand_r", "leg_l", "leg_r"};
+      allowSelfTreatment = 0;
       callbackProgress = "";
       callbackSuccess = "[_player, _target, _selectionName] call kat_aceCirculation_fnc_treatmentAdvanced_Access";
     };
@@ -596,6 +597,7 @@ class ACE_Medical_Actions {
       requiredMedic = 1;
       treatmentTime = 5;
       allowedSelections[] = {"hand_l", "hand_r", "leg_l", "leg_r"};
+      allowSelfTreatment = 0;
       callbackProgress = "";
       callbackSuccess = "[_player, _target, _selectionName] call kat_aceCirculation_fnc_removeAccess";
     };
